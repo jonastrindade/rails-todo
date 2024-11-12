@@ -1,0 +1,13 @@
+
+<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Circle -->
+  <circle cx="50" cy="50" r="45" fill="#E0E0E0" />
+  
+  <!-- Checkmark -->
+  <path d="M35 50 L45 60 L65 40" stroke="#4CAF50" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+  
+  <!-- Lines for the list items -->
+  <line x1="20" y1="30" x2="80" y2="30" stroke="#3C3C3C" stroke-width="4" stroke-linecap="round" />
+  <line x1="20" y1="45" x2="80" y2="45" stroke="#3C3C3C" stroke-width="4" stroke-linecap="round" />
+  <line x1="20" y1="60" x2="80" y2="60" stroke="#3C3C3C" stroke-width="4" stroke-linecap="round" />
+</svg>
