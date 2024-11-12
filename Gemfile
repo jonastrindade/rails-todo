@@ -57,7 +57,7 @@ group :development, :test do
   gem 'byebug', platform: :mri
 
   # Tests
-  gem 'rspec-rails', '~> 7.0.0'
+  gem 'rspec-rails', '~> 7.1.0'
   gem 'database_cleaner'
   gem 'factory_bot_rails'
   gem 'capybara'
