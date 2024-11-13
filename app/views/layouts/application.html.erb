@@ -22,13 +22,15 @@
     <%= stylesheet_link_tag :app, "data-turbo-track": "reload" %>
   </head>
 
-  <body>
+  <body class='flex flex-col h-screen justify-between'>
     <%= render 'shared/navbar' %>
     
     <main class="container mx-auto">
-      <div class="mt-10 px-8 py-8">
+      <div class="mt-10">
         <%= yield %>
       </div>
     </main>
+
   </body>
+  <%= render 'shared/footer' %>
 </html>
