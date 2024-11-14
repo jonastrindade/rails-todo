@@ -6,10 +6,10 @@ class User < ApplicationRecord
 
 
   def admin?
-    role == 'admin'
+    role == "admin"
   end
 
   def common?
-    role == 'common'
+    role == "common"
   end
 end

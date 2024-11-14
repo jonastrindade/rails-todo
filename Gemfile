@@ -54,16 +54,16 @@ group :development, :test do
   gem "rubocop-rails-omakase", require: false
 
   # Byebug
-  gem 'byebug', platform: :mri
+  gem "byebug", platform: :mri
 
   # Tests
-  gem 'rspec-rails', '~> 7.1.0'
-  gem 'database_cleaner'
-  gem 'factory_bot_rails'
-  gem 'capybara'
-  gem 'faker'
-  gem 'simplecov'
-  gem 'rails-controller-testing'
+  gem "rspec-rails", "~> 7.1.0"
+  gem "database_cleaner"
+  gem "factory_bot_rails"
+  gem "capybara"
+  gem "faker"
+  gem "simplecov"
+  gem "rails-controller-testing"
 end
 
 group :development do
