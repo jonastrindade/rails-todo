@@ -10,10 +10,6 @@ module Product
           end
         end
       end
-
-      def update?
-        user.admin? or not record.published?
-      end
     end
   end
 end
