@@ -10,7 +10,7 @@ RSpec.describe 'UsersController', type: :request do
     context "with admin valid credentials" do
       it "redirects to welcome page" do
         post user_session_path, params: { user: { email: admin.email, password: '123456' } }
-        expect(response).to redirect_to products_todo_tasks_path
+        expect(response).to redirect_to root_path
       end
     end
 
