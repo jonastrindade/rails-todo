@@ -6,8 +6,8 @@ class User < ApplicationRecord
 
   extend Enumerize
 
-  enumerize :role, in: [:common, :admin], default: :common, i18n_scope: "user.role"
-  
+  enumerize :role, in: [ :common, :admin ], default: :common, i18n_scope: "user.role"
+
   def admin?
     role == "admin"
   end
