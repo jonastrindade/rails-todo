@@ -84,6 +84,17 @@ jobs:
         with:
           ruby-version: .ruby-version
           bundler-cache: true
+      
+      - name: Install postgres client dependencies
+        run: sudo apt-get install libpq-dev
+
+       - name: Create database
+        run: |
+          bundle exec rails db:create
+          bundle exec rails db:migrate
+
+      - name: Run tests
+        run: bundle exec rspec spec
 
       - name: Run tests
         env:
