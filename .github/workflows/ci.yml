@@ -26,7 +26,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       RAILS_ENV: test
-      DATABASE_URL: postgres://postgres:example@localhost:5432/db_test
+      DATABASE_URL: postgres://postgres:example@localhost:5432/rails_todo_test
 
     services:
       postgres:
@@ -57,8 +57,8 @@ jobs:
 
       - name: Run tests
         env:
-          RAILS_ENV: test
-          DATABASE_URL: postgres://postgres:postgres@localhost:5432/rails_todo_test
+          POSTGRES_HOST: localhost
+          POSTGRES_PORT: 5432
         run: bundle exec rspec
 
       - name: Keep screenshots from failed system tests
