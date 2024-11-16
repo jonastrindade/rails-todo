@@ -17,10 +17,6 @@ class ApplicationController < ActionController::Base
     products_todo_tasks_path
   end
 
-  def authenticate_user!
-    raise Pundit::NotAuthorizedError, "You must be logged in to perform this action" unless current_user
-  end
-
   def user_not_authorized
     flash[:alert] = "You are not authorized to perform this action."
     redirect_to(root_path)
