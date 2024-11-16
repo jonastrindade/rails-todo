@@ -18,12 +18,4 @@ Rails.application.routes.draw do
       resources :tasks
     end
   end
-
-  namespace :admin do
-    namespace :products do
-      namespace :todo do
-        resources :tasks
-      end
-    end
-  end
 end

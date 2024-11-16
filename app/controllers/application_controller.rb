@@ -9,10 +9,6 @@ class ApplicationController < ActionController::Base
   end
 
   def after_sign_in_path_for(resource)
-    if current_user.admin?
-      admin_products_todo_tasks_path
-    else
-      products_todo_tasks_path
-    end
+    products_todo_tasks_path
   end
 end
