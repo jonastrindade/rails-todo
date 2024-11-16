@@ -6,6 +6,8 @@ class User < ApplicationRecord
 
   extend Enumerize
 
+  has_many :tasks, class_name: "Product::Todo::Task"
+
   enumerize :role, in: [ :common, :admin ], default: :common, i18n_scope: "user.role"
 
   def admin?
