@@ -25,12 +25,13 @@
   <body class='flex flex-col h-screen justify-between'>
     <%= render 'shared/navbar' %>
     
-    <main class="container mx-auto">
+    <main class="container mx-auto mb-auto h-10">
       <div class="mt-10">
         <%= yield %>
       </div>
     </main>
 
   </body>
+  
   <%= render 'shared/footer' %>
 </html>

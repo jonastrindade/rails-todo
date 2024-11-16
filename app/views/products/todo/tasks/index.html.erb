@@ -1,7 +1,11 @@
-<% if current_user.admin? %>
-  <%= render 'admin_index' %>
-<% elsif current_user.common? %>
-  <%= render 'common_index' %>
+<% if @tasks.present? %>
+  <% if current_user.admin? %>
+    <%= render 'products/todo/tasks/admin/index' %>
+  <% elsif current_user.common? %>
+    <%= render 'products/todo/tasks/common/index' %>
+  <% else %>
+    <%= render 'products/todo/tasks/common/index' %>
+  <% end %>
 <% else %>
-  <%= render 'common_index' %>
+  <%= render 'products/todo/tasks/empty_state' %>
 <% end %>
