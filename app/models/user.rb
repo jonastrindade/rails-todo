@@ -4,7 +4,10 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  extend Enumerize
 
+  enumerize :role, in: [:common, :admin], default: :common, i18n_scope: "user.role"
+  
   def admin?
     role == "admin"
   end

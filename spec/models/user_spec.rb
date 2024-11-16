@@ -12,6 +12,10 @@ RSpec.describe User, type: :model do
     end
   end
 
+  describe "User role enumerize" do
+    it { is_expected.to enumerize(:role).in(:common, :admin).with_default(:common) }
+  end
+
   describe "#admin?" do
     it "returns true" do
       expect(admin.admin?).to be true
