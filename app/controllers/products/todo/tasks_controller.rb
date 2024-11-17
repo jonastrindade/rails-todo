@@ -2,7 +2,7 @@ module Products
   module Todo
     class TasksController < ApplicationController
       def index
-        @tasks = policy_scope(Product::Todo::Task)
+        @tasks = policy_scope(Product::Todo::Task).paginate(page: params[:page], per_page: 10)
       end
 
       def new

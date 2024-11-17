@@ -43,3 +43,16 @@
     </tbody>
   </table>
 </div>
+
+<div class="text-center my-4">
+  <div role="navigation" aria-label="Pagination" class="px-3 py-2 mx-2 text-gray-700 no-underline bg-white rounded-lg">
+    <div class="flickr_pagination">
+      <div class="py-4">
+        <%= page_entries_info @tasks %>
+      </div>
+      <div class="py-4">
+        <%= will_paginate @tasks %>
+      </div>
+    </div>
+  </div>
+</div>
