@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html class="min-h-screen">
   <head>
     <title><%= content_for(:title) || "Rails Todo" %></title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -22,11 +22,11 @@
     <%= stylesheet_link_tag :app, "data-turbo-track": "reload" %>
   </head>
 
-  <body class='flex flex-col h-screen justify-between'>
+  <body class="min-h-screen">
     <%= render 'shared/navbar' %>
     
-    <main class="container mx-auto mb-auto h-10">
-      <div class="mt-10">
+    <main class="container mx-auto">
+      <div class="mt-28">
         <%= yield %>
       </div>
     </main>
