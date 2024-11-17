@@ -4,9 +4,9 @@ module Product
       class Scope < ApplicationPolicy::Scope
         def resolve
           if user.admin?
-            scope.all
+            scope.includes(:user).all
           else
-            scope.where(user_id: user.id)
+            scope.includes(:user).where(user_id: user.id)
           end
         end
       end
