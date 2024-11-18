@@ -1,7 +1,8 @@
 class ApplicationController < ActionController::Base
+  allow_browser versions: :modern
+
   include Pundit::Authorization
 
-  allow_browser versions: :modern
   before_action :authenticate_user!
   before_action :configure_permitted_parameters, if: :devise_controller?
 
