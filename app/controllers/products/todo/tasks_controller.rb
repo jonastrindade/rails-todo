@@ -12,18 +12,17 @@ module Products
       end
 
       def new
-        # TODO add tasks new tests
         @task = Product::Todo::Task.new
       end
 
       def create
-        # TODO add tasks create tests
         @task = Product::Todo::Task.new(create_params.merge(user_id: current_user.id))
+        authorize @task
         if @task.save!
-          flash[:success] = "New todo successfully added!"
+          flash[:notice] = "New todo successfully added!"
           redirect_to products_todo_tasks_url
         else
-          flash.now[:error] = "Todo creation failed"
+          flash.now[:alert] = "Todo creation failed"
           render :new
         end
       end
