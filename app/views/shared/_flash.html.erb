@@ -1,0 +1,13 @@
+<div class="flex justify-end absolute bottom-20 right-10">
+  <% flash.each do |type, msg| %>
+    <% if type == 'notice' %>
+      <div class="p-4 mb-4 text-sm text-blue-800 bg-blue-50 border border-blue-200 rounded-lg" role="notice">
+        <span class="font-medium">Info notice!</span> <%= msg %>
+      </div>
+    <% elsif type == 'alert' %>
+      <div class="p-4 mb-4 text-sm text-red-800 bg-red-50 border border-red-200 rounded-lg" role="alert">
+        <span class="font-medium">Danger alert!</span> <%= msg %>
+      </div>
+    <% end %>
+  <% end %>
+</div>
