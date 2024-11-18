@@ -10,6 +10,10 @@ module Product
           end
         end
       end
+
+      def create?
+        user.common?
+      end
     end
   end
 end
