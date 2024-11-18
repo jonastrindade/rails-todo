@@ -6,8 +6,6 @@
 - [ ] add tasks delete and tests
 - [ ] add tasks dashboard and tests
 - [ ] add tasks filters
-- [ ] add tasks new tests
-- [ ] add tasks create tests
 - [ ] add tasks validations and tests
 - [ ] add tasks callbacks and tests
 - [ ] add tasks mailer and tests
