@@ -53,7 +53,7 @@ gem "enumerize"
 gem "devise", "~> 4.9"
 
 # Paginate
-gem "will_paginate", "~> 3.3"
+gem "will_paginate", "~> 4.0"
 
 # Filtering
 gem "ransack"
