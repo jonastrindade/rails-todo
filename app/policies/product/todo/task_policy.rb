@@ -11,8 +11,37 @@ module Product
         end
       end
 
+      def show?
+        if user.common?
+          record.user_id == user.id
+        elsif user.admin?
+          true
+        end
+      end
+
+      def new?
+        user.common?
+      end
+      
       def create?
         user.common?
+      end
+
+
+      def edit?
+        if user.common?
+          record.user_id == user.id
+        elsif user.admin?
+          true
+        end
+      end
+
+      def update?
+        if user.common?
+          record.user_id == user.id
+        elsif user.admin?
+          true
+        end
       end
     end
   end
