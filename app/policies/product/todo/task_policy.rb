@@ -22,11 +22,10 @@ module Product
       def new?
         user.common?
       end
-      
+
       def create?
         user.common?
       end
-
 
       def edit?
         if user.common?
