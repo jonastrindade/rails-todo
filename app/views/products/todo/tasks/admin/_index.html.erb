@@ -22,6 +22,7 @@
         <th class="p-3 text-sm font-semibold text-left text-gray-700 bg-gray-200">Title</th>
         <th class="p-3 text-sm font-semibold text-left text-gray-700 bg-gray-200">Description</th>
         <th class="p-3 text-sm font-semibold text-left text-gray-700 bg-gray-200">Deadline</th>
+        <th class="p-3 text-sm font-semibold text-left text-gray-700 bg-gray-200">Actions</th>
       </tr>
     </thead>
     <tbody>
@@ -34,13 +35,17 @@
             <%= task.user.email %>
           </td>
           <td class="px-3 py-4 text-sm font-normal text-left text-gray-600 bg-gray-50">
-            <%= task.title %>
+            <%= truncate(task.title, lenght: 50) %>
           </td>
           <td class="px-3 py-4 text-sm font-normal text-left text-gray-600 bg-gray-50">
-            <%= task.description %>
+            <%= truncate(task.description, lenght: 50) %>
           </td>
           <td class="px-3 py-4 text-sm font-normal text-left text-gray-600 bg-gray-50">
             <%= task.deadline&.strftime("%d/%m/%y") %>
+          </td>
+          <td class="px-3 py-4 text-sm font-normal text-left text-gray-600 bg-gray-50">
+            <%= link_to 'Update Todo', edit_products_todo_task_path(task), class: "px-4 py-2 border-gray-200 dark:bg-gray-600 text-white text-sm font-medium rounded-lg shadow hover:dark:bg-gray-400 focus:outline-none focus:ring focus:ring-blue-300"%>
+            <%= link_to 'View Todo', products_todo_task_path(task), class: "px-4 py-2 border-gray-200 dark:bg-gray-600 text-white text-sm font-medium rounded-lg shadow hover:dark:bg-gray-400 focus:outline-none focus:ring focus:ring-blue-300"%>
           </td>
         </tr>
       <% end %>
