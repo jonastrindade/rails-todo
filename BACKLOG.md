@@ -1,7 +1,6 @@
 # Backlog
 
 ## Tasks
-- [ ] add tasks update and tests
 - [ ] add tasks finish through update and tests
 - [ ] add tasks delete and tests
 - [ ] add tasks dashboard and tests
