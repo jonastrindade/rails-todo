@@ -23,13 +23,13 @@ jobs:
   rspec:
     name: RSpec
     needs: rubocop
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     env:
       RAILS_ENV: test
       DATABASE_URL: postgres://postgres:example@localhost:5432/rails_todo_test
     services:
       postgres:
-        image: postgres:latest
+        image: postgres:17
         ports: ['5432:5432']
         env:
           POSTGRES_DB: rails_todo_test
