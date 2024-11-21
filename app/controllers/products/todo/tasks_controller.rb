@@ -54,7 +54,7 @@ module Products
       private
 
       def task_params
-        params.require(:product_todo_task).permit(:title, :description, :deadline)
+        params.require(:product_todo_task).permit(:title, :description, :deadline, :status)
       end
     end
   end

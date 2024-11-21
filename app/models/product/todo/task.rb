@@ -1,6 +1,8 @@
 module Product
   module Todo
     class Task < ApplicationRecord
+      extend Enumerize
+
       belongs_to :user
 
       # TODO add tasks validations and tests
@@ -8,6 +10,8 @@ module Product
       # TODO add tasks mailer and tests
 
       validate :valid_deadline
+
+      enumerize :status, in: [ :to_finish, :finished ], default: :to_finish, i18n_scope: "user.role"
 
       private
 

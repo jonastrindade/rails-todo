@@ -4,3 +4,7 @@ en:
       role:
         common: "common"
         admin: "admin"
+    task:
+      status:
+        to_finish: "to_finish"
+        finished: "finished"
