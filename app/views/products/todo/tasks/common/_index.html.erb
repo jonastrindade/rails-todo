@@ -17,7 +17,6 @@
   <table class="min-w-full bg-white">
     <thead class="bg-gray-100 border-b">
       <tr>
-        <th class="p-3 text-sm font-semibold text-left text-gray-700 bg-gray-200">ID</th>
         <th class="p-3 text-sm font-semibold text-left text-gray-700 bg-gray-200">Title</th>
         <th class="p-3 text-sm font-semibold text-left text-gray-700 bg-gray-200">Description</th>
         <th class="p-3 text-sm font-semibold text-left text-gray-700 bg-gray-200">Deadline</th>
@@ -29,16 +28,13 @@
       <% @tasks.each do |task| %>
         <tr>
           <td class="px-3 py-4 text-sm font-normal text-left text-gray-600 bg-gray-50">
-            <%= task.id %>
-          </td>
-          <td class="px-3 py-4 text-sm font-normal text-left text-gray-600 bg-gray-50">
             <%= truncate(task.title, lenght: 50) %>
           </td>
           <td class="px-3 py-4 text-sm font-normal text-left text-gray-600 bg-gray-50">
             <%= truncate(task.description, lenght: 50) %>
           </td>
           <td class="px-3 py-4 text-sm font-normal text-left text-gray-600 bg-gray-50">
-            <% if task&.deadline < Time.zone.today %>
+            <% if task&.deadline > Time.zone.today %>
               <span class="bg-blue-100 text-blue-800 text-sm font-medium me-2 px-2.5 py-0.5 rounded dark:text-blue-900"><%= task.deadline.strftime("%d/%m/%y") %></span>
             <% elsif task&.deadline == Time.zone.today %>
               <span class="bg-yellow-100 text-yellow-800 text-sm font-medium me-2 px-2.5 py-0.5 rounded dark:text-yellow-900"><%= task.deadline.strftime("%d/%m/%y") %></span>
