@@ -11,6 +11,10 @@ module Product
 
       validate :valid_deadline
 
+      def self.default_scope
+        order(status: :desc, deadline: :asc)
+      end
+
       enumerize :status, in: [ :to_finish, :finished ], default: :to_finish, i18n_scope: "user.role"
 
       private
