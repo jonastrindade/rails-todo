@@ -93,7 +93,7 @@ RSpec.describe Products::Todo::TasksController, type: :request do
     end
   end
 
-  describe "POST create" do
+  describe "PATCH update" do
     before do
       get root_path
     end
@@ -142,6 +142,32 @@ RSpec.describe Products::Todo::TasksController, type: :request do
         deadline: '123' } }
 
       expect(response.body).to include("Todo update failed")
+    end
+  end
+
+  describe "PATCH update" do
+    before do
+      get root_path
+    end
+
+    it "common delete task object" do
+      user = create(:user)
+      sign_in(user) if user.present?
+      task = create(:task, user_id: user.id)
+      delete products_todo_task_path(task)
+
+      follow_redirect!
+      expect(response.body).to include("Todo item successfully destroyed.")
+    end
+
+    it "admin delete task object" do
+      user = create(:user, role: 'admin')
+      sign_in(user) if user.present?
+      task = create(:task, user_id: user.id)
+      delete products_todo_task_path(task)
+
+      follow_redirect!
+      expect(response.body).to include("Todo item successfully destroyed.")
     end
   end
 end

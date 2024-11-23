@@ -12,11 +12,7 @@ module Product
       end
 
       def show?
-        if user.common?
-          record.user_id == user.id
-        elsif user.admin?
-          true
-        end
+        task_rule
       end
 
       def new?
@@ -28,14 +24,20 @@ module Product
       end
 
       def edit?
-        if user.common?
-          record.user_id == user.id
-        elsif user.admin?
-          true
-        end
+        task_rule
       end
 
       def update?
+        task_rule
+      end
+
+      def delete?
+        task_rule
+      end
+
+      private
+
+      def task_rule
         if user.common?
           record.user_id == user.id
         elsif user.admin?

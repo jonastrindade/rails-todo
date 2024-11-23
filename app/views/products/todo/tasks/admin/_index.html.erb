@@ -54,11 +54,13 @@
             <% end %>
           </td>
           <td class="flex justify-normal px-3 py-4 text-sm font-normal text-left text-gray-600 bg-gray-50">
-            <%= link_to 'Update Todo', edit_products_todo_task_path(task), class: "mx-0.5	px-4 py-2 border-gray-200 dark:bg-gray-600 text-white text-sm font-medium rounded-lg shadow hover:dark:bg-gray-400 focus:outline-none focus:ring focus:ring-blue-300"%>
-            <%= link_to 'View Todo', products_todo_task_path(task), class: "mx-0.5 px-4 py-2 border-gray-200 dark:bg-gray-600 text-white text-sm font-medium rounded-lg shadow hover:dark:bg-gray-400 focus:outline-none focus:ring focus:ring-blue-300"%>
+            <%= link_to 'Update', edit_products_todo_task_path(task), class: "mx-0.5	px-4 py-2 border-gray-200 dark:bg-gray-600 text-white text-sm font-medium rounded-lg shadow hover:dark:bg-gray-400 focus:outline-none focus:ring focus:ring-blue-300"%>
+            <%= link_to 'View', products_todo_task_path(task), class: "mx-0.5 px-4 py-2 border-gray-200 dark:bg-gray-600 text-white text-sm font-medium rounded-lg shadow hover:dark:bg-gray-400 focus:outline-none focus:ring focus:ring-blue-300"%>
             <%= button_to "Finish", products_todo_task_path(task),   
                   params: { product_todo_task: { status: "finished" } }, 
                   method: :patch, data: { confirm: "Mark this To-Do as being completed?  This will hide it from view." },
+                  class: "mx-0.5 px-4 py-2 border-gray-200 dark:bg-gray-600 text-white text-sm font-medium rounded-lg shadow hover:dark:bg-gray-400 focus:outline-none focus:ring focus:ring-blue-300" %>
+            <%= button_to "Delete", products_todo_task_path(task), method: :delete, 
                   class: "mx-0.5 px-4 py-2 border-gray-200 dark:bg-gray-600 text-white text-sm font-medium rounded-lg shadow hover:dark:bg-gray-400 focus:outline-none focus:ring focus:ring-blue-300" %>
           </td>
         </tr>

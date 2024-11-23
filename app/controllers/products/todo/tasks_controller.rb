@@ -2,18 +2,16 @@ module Products
   module Todo
     class TasksController < ApplicationController
       before_action :task_params, only: [ :create, :update ]
-      # TODO add tasks update and tests
-      # TODO add tasks finish through update and tests
-      # TODO add tasks delete and tests
+      before_action :set_task, only: [ :show, :edit, :update, :destroy ]
+
+      # TODO add tasks filters
       # TODO add tasks dashboard and tests
 
       def index
-        # TODO add tasks filters
         @tasks = policy_scope(Product::Todo::Task).paginate(page: params[:page], per_page: 10)
       end
 
       def show
-        @task = Product::Todo::Task.find(params[:id])
         authorize @task
         render :show
       end
@@ -36,12 +34,10 @@ module Products
       end
 
       def edit
-        @task = Product::Todo::Task.find(params[:id])
         authorize @task
       end
 
       def update
-        @task = Product::Todo::Task.find(params[:id])
         if @task.update(task_params)
           flash[:notice] = "Todo successfully updated!"
           redirect_to products_todo_task_url(@task)
@@ -51,10 +47,20 @@ module Products
         end
       end
 
+      def destroy
+        @task.destroy
+        flash[:notice] = "Todo item successfully destroyed."
+        redirect_to products_todo_tasks_path
+      end
+
       private
 
       def task_params
         params.require(:product_todo_task).permit(:title, :description, :deadline, :status)
+      end
+
+      def set_task
+        @task = Product::Todo::Task.find(params[:id])
       end
     end
   end
