@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   extend Enumerize
+  acts_as_paranoid
 
   has_many :tasks, class_name: "Product::Todo::Task"
 

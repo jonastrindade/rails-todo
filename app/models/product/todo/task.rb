@@ -2,6 +2,7 @@ module Product
   module Todo
     class Task < ApplicationRecord
       extend Enumerize
+      acts_as_paranoid
 
       belongs_to :user
 
