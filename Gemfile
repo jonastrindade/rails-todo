@@ -43,6 +43,9 @@ gem "thruster", require: false
 # Tailwindcss
 gem "tailwindcss-rails"
 
+# Charts
+gem "chartkick"
+
 # Pundit
 gem "pundit"
 
