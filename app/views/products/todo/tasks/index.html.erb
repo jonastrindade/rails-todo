@@ -1,19 +1,25 @@
-<div class="mb-10 flex items-center justify-end">
+<div class="mb-5 flex items-center justify-end">
+  <p>
+    <%= link_to "Todo Analysis", products_todo_dashboards_path, class: 'px-4 py-2 border-gray-200 dark:bg-gray-600 text-white text-sm font-medium rounded-lg shadow hover:dark:bg-gray-400 focus:outline-none focus:ring focus:ring-blue-300' %>
+  </p>
+</div>
+
+<div class="mb-5 flex items-center justify-end">
   <% if policy(Product::Todo::Task).new? %>
-    <p>
-      <%= link_to "Create new Todo", new_products_todo_task_path, class: 'px-4 py-2 border-gray-200 dark:bg-gray-600 text-white text-sm font-medium rounded-lg shadow hover:dark:bg-gray-400 focus:outline-none focus:ring focus:ring-blue-300' %>
-    </p>
+  <p>
+    <%= link_to "Create new Todo", new_products_todo_task_path, class: 'px-4 py-2 border-gray-200 dark:bg-gray-600 text-white text-sm font-medium rounded-lg shadow hover:dark:bg-gray-400 focus:outline-none focus:ring focus:ring-blue-300' %>
+  </p>
   <% end %>
 </div>
 
 <% if @tasks.present? %>
-  <% if current_user.admin? %>
-    <%= render 'products/todo/tasks/admin/index' %>
-  <% elsif current_user.common? %>
-    <%= render 'products/todo/tasks/common/index' %>
-  <% else %>
-    <%= render 'products/todo/tasks/common/index' %>
-  <% end %>
+<% if current_user.admin? %>
+<%= render 'products/todo/tasks/admin/index' %>
+<% elsif current_user.common? %>
+<%= render 'products/todo/tasks/common/index' %>
 <% else %>
-  <%= render 'products/todo/tasks/empty_state' %>
+<%= render 'products/todo/tasks/common/index' %>
+<% end %>
+<% else %>
+<%= render 'products/todo/tasks/empty_state' %>
 <% end %>

@@ -5,7 +5,6 @@ module Products
       before_action :set_task, only: [ :show, :edit, :update, :destroy ]
 
       # TODO add tasks filters
-      # TODO add tasks dashboard and tests
 
       def index
         @tasks = policy_scope(Product::Todo::Task).paginate(page: params[:page], per_page: 10)

@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   namespace :products do
     namespace :todo do
       resources :tasks
+      resources :dashboards, only: [ :index ]
     end
   end
 
